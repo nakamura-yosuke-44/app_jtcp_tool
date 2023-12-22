@@ -27,5 +27,7 @@ module JtcpTool
     config.generators do |g|
       g.test_framework :rspec
     end
+
+    config.time_zone = "Tokyo"
   end
 end
