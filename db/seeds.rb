@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require "csv"
+
+CSV.foreach(Rails.root.join('db', 'colors_data.csv'), encoding: "bom|utf-8", headers: :first_row) do |data|
+  Color.create(name: data['name'], kana: data['kana'], code: data['code'])
+end
