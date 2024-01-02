@@ -1,0 +1,15 @@
+<div class="container mx-auto grid grid-cols-4 gap-4">
+  <% @colors.each do |color| %>
+    <div class="flex border-solid border-2">
+      <div class="rounded-full h-20 w-20 border shrink-0" style="background-color: <%= color.code %>;"></div>
+      <div class="flex-grow border-solid border-2 relative flex">
+        <div class="text-xs top-0 right-0 bg-green-100 absolute">てすと</div>
+        <div class="absoolute flex items-center flex-grow" style="background-color: <%= color.code %>;">
+          <p class="text-sm bg-white flex-grow px-4 flex items-center justify-center">
+            <%= "#{color.name}(#{color.kana})" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
