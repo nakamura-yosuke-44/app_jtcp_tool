@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      color: "色"
+      favorite: "お気に入り"
+    attributes:
+      color:
+        name: "名前"
+        code: "コード"
+        kana: "かな"
+        id: "ID"
+        created_at: "作成日時"
+        updated_at: "更新日時"
+      favorite:
+        id: "ID"
+        created_at: "作成日時"
+        updated_at: "更新日時"
+        
