@@ -9,7 +9,7 @@
           </svg>
         </label>
       </div>
-      <div class="drawer-side">
+      <div class="drawer-side z-3">
         <label for="m-drawer" aria-label="close sidebar" class="drawer-overlay"></label> 
         <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
           <li><%= link_to("ログアウト", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "ログアウトしますか？"} ) %></li>

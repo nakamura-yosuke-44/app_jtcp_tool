@@ -5,7 +5,7 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <button class="btn btn-primary">
+  <button class="btn btn-xs btn-primary">
     <%= link_to t(".sign_up"), new_registration_path(resource_name) %><br />
   </button>
 <% end %>
