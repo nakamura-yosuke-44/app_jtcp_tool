@@ -1,1 +1,14 @@
 ja:
+  activerecord:
+    models:
+      color: "色"
+      favorite: "お気に入り"
+  colors:
+    index:
+    favorites:
+      no_result: "結果がありません"
+  favorites:
+    create:
+      success: "お気に入りに追加しました"
+    delete:
+      success: "お気に入りから削除しました"
