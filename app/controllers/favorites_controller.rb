@@ -1,13 +1,13 @@
 class FavoritesController < ApplicationController
   def create
     color = Color.find(params[:color_id])
-    current_user.bookmark(color)
-    redirect_to colors_path, success: t('.success')
+    current_user.add_favorite(color)
+    favorite = current_user.favorites.find_by(color_id: color.id)
+    render json: favorite
   end
 
-  def delete
+  def destroy
     color = current_user.favorites.find(params[:id]).color
-    current_user.unbookmark(color)
-    redirect_to coolors_path, success: t('.success')
+    current_user.delete_favorite(color)
   end
 end
