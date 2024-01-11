@@ -6,15 +6,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  def bookmark(board)
-    favorite_colors << board
+  def add_favorite(color)
+    favorite_colors << color
   end
 
-  def unbookmark(board)
-    favorite_colors.destroy(board)
+  def delete_favorite(color)
+    favorite_colors.destroy(color)
   end
 
-  def bookmark?(board)
-    favorite_colors.include?(board)
+  def favorite?(color)
+    favorite_colors.include?(color)
   end
 end
