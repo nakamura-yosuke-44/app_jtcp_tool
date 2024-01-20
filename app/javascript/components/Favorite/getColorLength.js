@@ -1,4 +1,3 @@
-console.log('testco');
 const getColorLength = () => {
   const element = document?.getElementById("colorLength");
 

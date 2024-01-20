@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FcLike, FcLikePlaceholder } from 'react-icons/fc';
-import FlashMessage from './FlashMessage';
+import FlashMessage from '../FlashMessage/FlashMessage';
 import axios from 'axios';
 
 axios.defaults.headers['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
