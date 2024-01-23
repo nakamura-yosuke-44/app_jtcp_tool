@@ -19,7 +19,8 @@
       <%= render 'shared/before_login_header' %>
     <% end %>
     <%= render 'shared/flash_message' %>
-    <div class="flex-grow flex">
+    <div class="flex-grow flex flex-col bg-[#eb6101]">
+      <div class="ml-4"><%= breadcrumbs separator: " &rsaquo; " %></div> 
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
