@@ -1,34 +1,34 @@
-<h2><%= t('.sign_up') %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "border-solid border border-black" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border-solid border border-black" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "border-solid border border-black" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "border-solid border border-black" %>
-  </div>
-
-  <div>
-    <div class="actions btn btn-xs btn-primary">
-      <%= f.submit t('.sign_up') %>
+<div class="flex-grow bg-[#eb6101] flex flex-col items-center justify-center">
+  <div class="text-2xl font-bold"><%= t('.sign_up') %></div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field mb-2">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "border border-[#0d0015]" %>
     </div>
-    <%= render "devise/shared/links" %>
-  </div>
-<% end %>
+  
+    <div class="field mb-2">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border border-[#0d0015]" %>
+    </div>
+  
+    <div class="field mb-2">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+        <em>(<%= t('.characters_minimum', count: @minimum_password_length ) %>)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class: "border border-[#0d0015]" %>
+    </div>
+  
+    <div class="field mb-2">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "border border-[#0d0015]" %>
+    </div>
+  
+    <div class="text-center">
+      <div class="field mb-2 actions btn btn-xs btn-primary">
+        <%= f.submit t('devise.defaults.registration') %>
+      </div>
+    </div>
+  <% end %>
+</div>
