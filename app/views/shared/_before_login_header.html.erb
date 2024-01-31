@@ -9,7 +9,7 @@
       <div class="drawer-side z-50">
         <label for="m-drawer" aria-label="close sidebar" class="drawer-overlay"></label> 
         <ul class="menu p-4 w-80 min-h-full bg-[#eaf4fc] text-base-content">
-          <li><%= link_to("色一覧", colors_path) %></li>
+          <li><%= link_to(t('colors.index.title'), colors_path) %></li>
         </ul>
       </div>
     </div>
@@ -20,10 +20,10 @@
     <% end %>
   </div>
   <div class="justify-end text-[#e198b4] mr-4 hover:text-[#b44c97]">
-    <%= link_to("新規登録", new_user_registration_path) %>
+    <%= link_to(t('devise.registrations.new.sign_up'), new_user_registration_path) %>
   </div>
   <div class="justify-end text-[#e198b4] mr-4 hover:text-[#b44c97]">
-    <%= link_to("ログイン", new_user_session_path) %>
+    <%= link_to(t('devise.sessions.new.sign_in'), new_user_session_path) %>
   </div>
 </div>
 
