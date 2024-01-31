@@ -1,12 +1,14 @@
 ja:
-  activerecord:
-    models:
-      color: "色"
-      favorite: "お気に入り"
+  defaults:
   colors:
     index:
-    favorites:
+      title: "色一覧"
+    favorites: 
+      title: "お気に入り"
       no_result: "結果がありません"
+    create:
+      success: '新しい色を追加しました'
+      false: '新しい色を追加できませんでした'
   favorites:
     create:
       success: "お気に入りに追加しました"

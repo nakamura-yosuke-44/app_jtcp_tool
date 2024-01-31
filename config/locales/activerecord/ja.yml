@@ -1,1 +1,6 @@
 ja:
+  activerecord:
+    models:
+      color: "色"
+      favorite: "お気に入り"
+  attributes:
