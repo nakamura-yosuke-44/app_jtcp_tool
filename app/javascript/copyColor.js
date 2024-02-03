@@ -1,19 +1,20 @@
-const copyColor = (nodeId) => {
-  const colorToClip = () => {
-    const node = document.getElementById(nodeId);
-    const colorCode = node.getAttribute("data");
-    console.log(colorCode);
+import addFlashMessage from "./components/Commmon/addFlashMessage";
 
+const copyColor = (nodeId) => {
+  const node = document.getElementById(nodeId);
+  const colorCode = node.getAttribute("data");
+  
+  const colorToClip = () => {
     navigator.clipboard.writeText(colorCode)
       .then(() => {
-        alert("コピーしました");
+        addFlashMessage(nodeId, "コピーしました");
       })
       .catch((error) => {
         console.error("コピーに失敗しました", error);
       });
   };
 
-  document.querySelector(`#${nodeId}`).addEventListener("click", colorToClip);
+  node.addEventListener("click", colorToClip);
 };
 
 export default copyColor;
