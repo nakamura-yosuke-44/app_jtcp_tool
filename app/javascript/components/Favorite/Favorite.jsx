@@ -15,7 +15,7 @@ const Favorite = ({ colorId, favoriteId} ) => {
       const response = await axios.post('/favorites', { color_id: colorId });
       const { data: { id = null} } = response;
       id && setId(id);
-      setMessage('追加しました');
+      setMessage('お気に入りに追加しました');
       setShowMessage(true);
     } else {
       await axios.delete(`/favorites/${id}`);

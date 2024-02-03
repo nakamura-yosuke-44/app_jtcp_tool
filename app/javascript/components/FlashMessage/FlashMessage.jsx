@@ -17,7 +17,7 @@ const FlashMessage = ({ message, showMessage, setShowMessage }) => {
   return (
     <>
       {showMessage ? (
-        <div className="bg-green-500 px-4 py-2 rounded-md text-white mb-4 fixed top-0 left-0 right-0 z-50">
+        <div className="bg-green-500 px-4 py-2 text-white mb-4 fixed top-16 left-0 right-0 z-50">
           {message}
         </div>
       ) : (
