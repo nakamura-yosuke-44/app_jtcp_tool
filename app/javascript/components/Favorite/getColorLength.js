@@ -1,20 +1,21 @@
-const getColorLength = () => {
-  const element = document?.getElementById("colorLength");
+function getColorLength() {
+  const element = document?.getElementById('colorLength');
 
   if (element) {
-    const propsData = element?.getAttribute("data");
-    
-    if (propsData) {
+    const propsData = element?.getAttribute('data');
+    try {
       const props = JSON.parse(propsData);
       const { colorLength } = props;
       return colorLength;
-    } else {
-      console.error("Data attribute is missing.");
+    } catch (e) {
+      console.error('JSONの解析中にエラーが発生しました:', e.message || e);
+      alert('エラー');
+      return undefined;
     }
   } else {
-    // console.error(`DOM node with ID colorLength not found.`);
-    return;
+    console.error('エラー: ID "colorLength" が見つかりません');
+    return undefined;
   }
-};
+}
 
 export default getColorLength;

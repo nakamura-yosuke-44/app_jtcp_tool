@@ -5,13 +5,12 @@ const mount = (Component, mountNodeId) => {
   const mountNode = document.getElementById(mountNodeId);
 
   if (mountNode) {
-    const propsData = mountNode?.getAttribute("data");
-    
+    const propsData = mountNode?.getAttribute('data');
     if (propsData) {
       const props = JSON.parse(propsData);
       createRoot(mountNode).render(<Component {...props} />);
     } else {
-      //console.error(`Data attribute is missing:${Component.name}`);
+      // console.error(`Data attribute is missing:${Component.name}`);
       createRoot(mountNode).render(<Component />);
     }
   } else {
