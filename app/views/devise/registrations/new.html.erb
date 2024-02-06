@@ -4,7 +4,7 @@
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="field mb-2">
       <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "border border-[#0d0015]" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "border border-[#0d0015]", placeholder: " jane@example.com" %>
     </div>
   
     <div class="field mb-2">
@@ -15,7 +15,7 @@
     <div class="field mb-2">
       <%= f.label :password %>
       <% if @minimum_password_length %>
-        <em>(<%= t('.characters_minimum', count: @minimum_password_length ) %>)</em>
+        <em><%= t('.characters_minimum', count: @minimum_password_length ) %></em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "new-password", class: "border border-[#0d0015]" %>
     </div>
