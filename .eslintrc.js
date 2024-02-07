@@ -22,5 +22,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-  },
+    'no-plusplus': 'warn',
+    'react/jsx-props-no-spreading': 'warn'
+  }
 };
