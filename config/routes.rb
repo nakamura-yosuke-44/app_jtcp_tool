@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "top#index"
+  
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   
+  get "search" => "searches#search"
+
   resources :colors do
     collection do
       get 'favorites'
@@ -17,4 +20,9 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: %i[create destroy]
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end
+
