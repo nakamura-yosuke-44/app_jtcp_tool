@@ -1,8 +1,12 @@
 ja:
+  helpers:
+    submit:
+      search: "検索"
   defaults:
   colors:
     index:
       title: "色一覧"
+      no_result: "結果がありません"
     favorites: 
       title: "お気に入り"
       no_result: "結果がありません"
