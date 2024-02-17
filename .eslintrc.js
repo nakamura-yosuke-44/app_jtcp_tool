@@ -23,6 +23,8 @@ module.exports = {
   },
   rules: {
     'no-plusplus': 'warn',
-    'react/jsx-props-no-spreading': 'warn'
+    'react/jsx-props-no-spreading': 'warn',
+    'jsx-a11y/no-static-element-interactions': 'warn',
+    'jsx-a11y/click-events-have-key-events': 'warn',
   }
 };
