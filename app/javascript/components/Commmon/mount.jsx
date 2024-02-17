@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-const mount = (Component, mountNodeId) => {
+function mount(Component, mountNodeId) {
   const mountNode = document.getElementById(mountNodeId);
 
   if (mountNode) {
@@ -10,12 +10,12 @@ const mount = (Component, mountNodeId) => {
       const props = JSON.parse(propsData);
       createRoot(mountNode).render(<Component {...props} />);
     } else {
-      // console.error(`Data attribute is missing:${Component.name}`);
+      console.log(`Data attribute is missing:${Component.name}`);
       createRoot(mountNode).render(<Component />);
     }
   } else {
-    console.error(`ID ${mountNodeId} not found.`);
+    console.log(`ID:${mountNodeId} not found.`);
   }
-};
+}
 
 export default mount;
