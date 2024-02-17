@@ -7,7 +7,7 @@ function showFlash(showMessage, setShowMessage) {
     if (showMessage) {
       const timeoutId = setTimeout(() => {
         setShowMessage(false);
-      }, 1000);
+      }, 500);
       return () => clearTimeout(timeoutId);
     }
   }, [showMessage, setShowMessage]);

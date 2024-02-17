@@ -1,5 +1,5 @@
 function getColorLength() {
-  const element = document?.getElementById('colorLength');
+  const element = document?.getElementById('colors');
 
   if (element) {
     const propsData = element?.getAttribute('data');

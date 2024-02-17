@@ -1,11 +1,11 @@
-<%= javascript_include_tag "colors", "data-turbo-track": "reload", defer: true %>
+<%= javascript_include_tag "favoriteColors", "data-turbo-track": "reload", defer: true %>
 <div class="flex-1">
   <% breadcrumb :favorites_colors, current_user %>
-  <%= tag.div(id: "colorLength", class: %w(container mx-auto mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-white), data: { colorLength: @colors.length }.to_json) do %>
-    <% if @colors.present? %>
-      <%= render @colors %>
-    <% else %>
+  <% if @colors.present? %>
+    <%= tag.div(id: "favorites", data: { colors: @colors, colorLength: @colors.length, favorites: @favorites }.to_json) do %><% end %> 
+  <% else %>
+    <div>
       <p><%= t(".no_result") %></p>
-    <% end %>
+    </div>
   <% end %>
 </div>

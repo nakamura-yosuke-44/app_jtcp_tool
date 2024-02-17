@@ -1,7 +1,39 @@
 <%= javascript_include_tag "colors", "data-turbo-track": "reload", defer: true %>
 <div class="flex-1">
   <% breadcrumb :colors %>
-  <%= tag.div(id: "colorLength", class: %w(container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 bg-white), data: { colorLength: @colors.length }.to_json) do %>
-    <%= render @colors %>
+  <%= tag.div(id: "colors", data: { colors: @colors, colorLength: @colors.length, favorites: @favorites }.to_json) do %>
   <% end %>
 </div>
+
+
+
+
+
+<%
+=begin
+%>
+  <%= javascript_include_tag "colors", "data-turbo-track": "reload", defer: true %>
+  <div class="flex-1">
+    <% breadcrumb :colors %>
+    <div id="search_form class="actions btn btn-xs"></div>
+  
+    <%= tag.div(id: "colors", class: %w(container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 bg-white), data: { colorLength: @colors.length }.to_json) do %>
+      <% if @colors.present? %>
+        <%= render @colors %>
+      <% else %>
+        <p><%= t(".no_result") %></p>
+      <% end %>
+    <% end %>
+  </div>
+  
+  検索フォーム
+  <%= form_with(url: colors_path, method: :get, local: true) do |f| %>
+    <%= f.text_field :keyword, class: 'border-2' %>
+    <div class="actions btn btn-xs">
+      <%= f.submit(t('helpers.submit.search')) %>
+    </div>
+  <% end %>
+
+<%
+=end
+%>
