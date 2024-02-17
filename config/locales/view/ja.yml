@@ -9,7 +9,7 @@ ja:
       no_result: "結果がありません"
     favorites: 
       title: "お気に入り"
-      no_result: "結果がありません"
+      no_result: "お気に入りはありません"
     create:
       success: '新しい色を追加しました'
       false: '新しい色を追加できませんでした'
