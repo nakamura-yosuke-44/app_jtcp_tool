@@ -7,4 +7,9 @@ class Color < ApplicationRecord
   def favorite_find(user)
     self.favorites.find_by(user_id: user.id)
   end
+
+  scope :search, -> (keyword) do
+    return if keyword.blank?
+    where(['name LIKE(?) OR kana LIKE(?)', "#{keyword}%", "#{keyword}%"])
+  end
 end
