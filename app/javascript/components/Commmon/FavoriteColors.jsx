@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ColorsCard from './ColorsCard';
 
@@ -9,11 +9,9 @@ function FavoriteColors({ colors, favorites }) {
   });
 
   return (
-    <>
-      <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 bg-white">
-        { colorComponents }
-      </div>
-    </>
+    <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 bg-white">
+      { colorComponents }
+    </div>
   );
 }
 
