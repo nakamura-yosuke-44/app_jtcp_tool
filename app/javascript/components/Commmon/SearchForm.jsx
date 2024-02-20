@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { IoMdSearch } from "react-icons/io";
-import { IconContext } from 'react-icons'
+import { IoMdSearch } from 'react-icons/io';
+import { IconContext } from 'react-icons';
 
 axios.defaults.headers['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 function SearchForm({ setIndexColors }) {
   const [inputValue, setInputValue] = useState('');
+  const iconSize = '26px';
+  const iconContextValue = useMemo(() => ({ size: iconSize }), [iconSize]);
 
   const handleSearch = async (e) => {
     try {
@@ -20,12 +22,13 @@ function SearchForm({ setIndexColors }) {
       alert('エラー');
     }
   };
+
   return (
-    <div className='container mx-auto text-right'>
-      <span className='relative'>
-        <input type="text" value={inputValue} onChange={handleSearch} className="border border-[#0d0015] pl-8" placeholder='色名で検索' />
-        <IconContext.Provider value={{ size: '26px' }}>
-          <span className='absolute left-0'>
+    <div className="container mx-auto text-right">
+      <span className="relative">
+        <input type="text" value={inputValue} onChange={handleSearch} className="border border-[#0d0015] pl-8 w-44" placeholder="色名で検索" />
+        <IconContext.Provider value={iconContextValue}>
+          <span className="absolute left-0">
             <IoMdSearch />
           </span>
         </IconContext.Provider>

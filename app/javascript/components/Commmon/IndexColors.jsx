@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 import ColorsCard from './ColorsCard';
 import SearchForm from './SearchForm';
 
-function IndexColors({ colors, favorites }) {
+function IndexColors({ colors, favorites, login }) {
   const [indexColors, setIndexColors] = useState(colors);
   const colorComponents = indexColors.map((color, index) => {
     const favorite = favorites.find((f) => f.color_id === color.id);
-    return <ColorsCard key={color.id} color={color} index={index} favoriteId={favorite?.id} />;
+    return (
+      <ColorsCard
+        key={color.id}
+        color={color}
+        index={index}
+        favoriteId={favorite?.id}
+        login={login}
+      />
+    );
   });
 
   return (
@@ -35,11 +43,13 @@ IndexColors.propTypes = {
     created_at: PropTypes.string,
     updated_at: PropTypes.string,
   })),
+  login: PropTypes.bool,
 };
 
 IndexColors.defaultProps = {
   colors: [],
   favorites: [],
+  login: false,
 };
 
 export default IndexColors;

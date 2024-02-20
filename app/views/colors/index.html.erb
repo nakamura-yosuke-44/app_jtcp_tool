@@ -1,7 +1,7 @@
 <%= javascript_include_tag "colors", "data-turbo-track": "reload", defer: true %>
 <div class="flex-1">
   <% breadcrumb :colors %>
-  <%= tag.div(id: "colors", data: { colors: @colors, colorLength: @colors.length, favorites: @favorites }.to_json) do %>
+  <%= tag.div(id: "colors", data: { colors: @colors, colorLength: @colors.length, favorites: @favorites, login: user_signed_in? }.to_json) do %>
   <% end %>
 </div>
 

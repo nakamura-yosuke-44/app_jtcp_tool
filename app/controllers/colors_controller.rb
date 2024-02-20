@@ -1,7 +1,8 @@
 class ColorsController < ApplicationController
-  def index
+  skip_before_action :authenticate_user!, only: %i[index]
+  def index 
     @colors = Color.search(params[:keyword]).order(:kana)
-    @favorites = current_user.favorites
+    @favorites = user_signed_in? ? current_user.favorites : []
   end
 
   def new

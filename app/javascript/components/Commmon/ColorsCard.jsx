@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import Favorite from '../Favorite/Favorite';
 import copyColor from './copyColor';
 
-function ColorsCard({ color, index, favoriteId }) {
+function ColorsCard({
+  color, index, favoriteId, login,
+}) {
   return (
     <div className="flex border-solid border-2">
       <div
@@ -13,9 +15,11 @@ function ColorsCard({ color, index, favoriteId }) {
         onClick={(e) => copyColor(e, color.code)}
       />
       <div className="flex-grow relative flex">
-        <div id={`favorite_${index}`} className="top-0 right-0 absolute z-40">
-          <Favorite colorId={color.id} favoriteId={favoriteId} />
-        </div>
+        {login && (
+          <div id={`favorite_${index}`} className="top-0 right-0 absolute z-40">
+            <Favorite colorId={color.id} favoriteId={favoriteId} />
+          </div>
+        )}
         <div className="flex items-center flex-grow" style={{ backgroundColor: color.code }}>
           <p className="text-sm bg-white flex-grow px-4 flex items-center justify-center">
             {`${color.name}(${color.kana})`}
@@ -37,12 +41,14 @@ ColorsCard.propTypes = {
   }),
   index: PropTypes.number,
   favoriteId: PropTypes.number,
+  login: PropTypes.bool,
 };
 
 ColorsCard.defaultProps = {
   color: null,
   index: null,
   favoriteId: null,
+  login: false,
 };
 
 export default ColorsCard;
