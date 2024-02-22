@@ -19,9 +19,8 @@
 #  fk_rails_...  (color_id => colors.id)
 #  fk_rails_...  (user_id => users.id)
 #
-class Favorite < ApplicationRecord
-  belongs_to :user
-  belongs_to :color
+require 'rails_helper'
 
-  validates :color_id, uniqueness: {scopr: :user}
+RSpec.describe Favorite, type: :model do
+  #pending "add some examples to (or delete) #{__FILE__}"
 end

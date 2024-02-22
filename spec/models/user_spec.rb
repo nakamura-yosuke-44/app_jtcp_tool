@@ -17,24 +17,8 @@
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
-class User < ApplicationRecord
-  has_many :favorites, dependent: :destroy
-  has_many :favorite_colors, through: :favorites, source: :color
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :timeoutable
-  
-  def add_favorite(color)
-    favorite_colors << color
-  end
+require 'rails_helper'
 
-  def delete_favorite(color)
-    favorite_colors.destroy(color)
-  end
-
-  def favorite?(color)
-    favorite_colors.include?(color)
-  end
+RSpec.describe User, type: :model do
+  #pending "add some examples to (or delete) #{__FILE__}"
 end
