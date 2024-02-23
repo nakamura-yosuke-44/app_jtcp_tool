@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ColorsCard from './ColorsCard';
 
-function FavoriteColors({ colors, favorites }) {
-  const colorComponents = colors.map((color, index) => {
+function FavoriteColors({ colors, favorites, login }) {
+  console.log(login)
+;  const colorComponents = colors.map((color, index) => {
     const favorite = favorites.find((f) => f.color_id === color.id);
-    return <ColorsCard key={color.id} color={color} index={index} favoriteId={favorite.id} />;
+    return <ColorsCard key={color.id} color={color} index={index} favoriteId={favorite.id} login={login} />;
   });
 
   return (
@@ -30,11 +31,13 @@ FavoriteColors.propTypes = {
     created_at: PropTypes.string,
     updated_at: PropTypes.string,
   })),
+  login: PropTypes.bool,
 };
 
 FavoriteColors.defaultProps = {
   colors: [],
   favorites: [],
+  login: false,
 };
 
 export default FavoriteColors;

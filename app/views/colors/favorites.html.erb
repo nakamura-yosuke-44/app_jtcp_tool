@@ -2,7 +2,7 @@
 <div class="flex-1">
   <% breadcrumb :favorites_colors, current_user %>
   <% if @colors.present? %>
-    <%= tag.div(id: "favorites", data: { colors: @colors, colorLength: @colors.length, favorites: @favorites }.to_json) do %><% end %> 
+    <%= tag.div(id: "favorites", data: { colors: @colors, colorLength: @colors.length, favorites: @favorites, login: user_signed_in? }.to_json) do %><% end %> 
   <% else %>
     <div>
       <p><%= t(".no_result") %></p>

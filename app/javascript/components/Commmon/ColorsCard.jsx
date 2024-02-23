@@ -4,7 +4,7 @@ import Favorite from '../Favorite/Favorite';
 import copyColor from './copyColor';
 
 function ColorsCard({
-  color, index, favoriteId, login,
+  color, index, favoriteId, login
 }) {
   return (
     <div className="flex border-solid border-2">
