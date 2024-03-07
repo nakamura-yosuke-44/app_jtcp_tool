@@ -2,32 +2,33 @@
   <div class="text-2xl font-bold"><%= t('.sign_up') %></div>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="field mb-2">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "border border-[#0d0015] pl-2" %>
-    </div>
-  
-    <div class="field mb-2">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border border-[#0d0015] pl-2" %>
-    </div>
-  
-    <div class="field mb-2">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-        <em><%= t('.characters_minimum', count: @minimum_password_length ) %></em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "border border-[#0d0015] pl-2" %>
-    </div>
-  
-    <div class="field mb-2">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "border border-[#0d0015] pl-2" %>
-    </div>
-  
-    <div class="text-center">
-      <div class="field mb-2 actions btn btn-xs bg-[#00a3af]">
-        <%= f.submit t('devise.defaults.registration') %>
+    <div class="flex flex-col items-center justify-center">
+      <div class="field mb-2">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "border border-[#0d0015] pl-2" %>
+      </div>
+    
+      <div class="field mb-2">
+        <div><%= f.label :email %></div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border border-[#0d0015] pl-2" %>
+      </div>
+    
+      <div class="field mb-2">
+        <div>
+          <%= f.label :password, t('devise.defaults.password')+t('.characters_minimum', count: @minimum_password_length ) %>
+        </div>
+        <%= f.password_field :password, autocomplete: "new-password", class: "border border-[#0d0015] pl-2" %>
+      </div>
+    
+      <div class="field mb-2">
+        <div><%= f.label :password_confirmation %></div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "border border-[#0d0015] pl-2" %>
+      </div>
+    
+      <div class="text-center">
+        <div class="field mb-2 actions btn btn-xs bg-[#00a3af]">
+          <%= f.submit t('devise.defaults.registration') %>
+        </div>
       </div>
     </div>
   <% end %>
