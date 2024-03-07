@@ -32,6 +32,7 @@ ja:
     defaults:
       login: ログイン
       registration: 登録
+      password: パスワード
     confirmations:
       confirmed: メールアドレスが確認できました。
       new:
