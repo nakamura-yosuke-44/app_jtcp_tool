@@ -1,8 +1,8 @@
 <div class="flex border-solid border-2">
   <div id="color_<%= color_counter + 1 %>" class="rounded-full h-20 w-20 border shrink-0" style="background-color: <%= color.code %>;" data="<%= color.code %>"></div>
-  <div class="flex-grow border-solid border-2 relative flex">
+  <div class="flex-grow relative flex">
     <%= content_tag(:div, class: "top-0 right-0 absolute", id: "favorite_#{color_counter + 1}", data: { colorId: color.id, favoriteId: color.favorite_find(current_user)&.id }.to_json) do %><% end %>
-    <div class="absoolute flex items-center flex-grow" style="background-color: <%= color.code %>;">
+    <div class="absolute flex items-center flex-grow" style="background-color: <%= color.code %>;">
       <p class="text-sm bg-white flex-grow px-4 flex items-center justify-center">
         <%= "#{color.name}(#{color.kana})" %>
       </p>

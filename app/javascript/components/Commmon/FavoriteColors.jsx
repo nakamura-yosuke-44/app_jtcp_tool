@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import ColorsCard from './ColorsCard';
 
 function FavoriteColors({ colors, favorites, login }) {
-  console.log(login)
-;  const colorComponents = colors.map((color, index) => {
+  const colorComponents = colors.map((color, index) => {
     const favorite = favorites.find((f) => f.color_id === color.id);
     return <ColorsCard key={color.id} color={color} index={index} favoriteId={favorite.id} login={login} />;
   });

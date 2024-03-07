@@ -4,12 +4,12 @@ import Favorite from '../Favorite/Favorite';
 import copyColor from './copyColor';
 
 function ColorsCard({
-  color, index, favoriteId, login
+  color, index, favoriteId, login,
 }) {
   return (
     <div className="flex border-solid border-2">
       <div
-        id={`color_${index}`}
+        id={`color_${color.id}`}
         className="rounded-full h-20 w-20 border shrink-0"
         style={{ backgroundColor: color.code }}
         onClick={(e) => copyColor(e, color.code)}
