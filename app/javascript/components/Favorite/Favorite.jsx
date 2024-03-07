@@ -27,7 +27,7 @@ function Favorite({ colorId, favoriteId }) {
       }
     } catch (e) {
       console.error('エラー:', e.message || e);
-      alert('エラー');
+      alert('エラーが発生しました。再度ログインし直してください。');
     }
   };
 
