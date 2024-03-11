@@ -8,31 +8,63 @@ axios.defaults.headers['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf
 
 function SearchForm({ setIndexColors }) {
   const [inputValue, setInputValue] = useState('');
+  const [colorNameArr, setColorNameArr] = useState([]);
+  const [isFocus, setIsFocus] = useState(false); 
   const iconSize = '26px';
   const iconContextValue = useMemo(() => ({ size: iconSize }), [iconSize]);
 
-  const handleSearch = async (e) => {
+  const handleSearch = async (keyword) => {
     try {
-      const newInputValue = e.target.value;
-      setInputValue(newInputValue);
-      const response = await axios.get('/search', { params: { keyword: newInputValue } });
-      setIndexColors(response.data);
+      setInputValue(keyword);
+      const response = await axios.get('/search', { params: { keyword: keyword } });
+      const searchResult = response.data;
+      const colorNames = searchResult.map((color) => color.name);
+      setColorNameArr(colorNames);
+      setIndexColors(searchResult);
     } catch (error) {
       console.error('エラー:', error.message || error);
       alert('エラー');
     }
   };
-
   return (
-    <div className="container mx-auto text-right">
-      <span className="relative">
-        <input type="text" value={inputValue} onChange={handleSearch} className="border border-[#0d0015] pl-8 w-44" placeholder="色名で検索" />
-        <IconContext.Provider value={iconContextValue}>
-          <span className="absolute left-0">
-            <IoMdSearch />
-          </span>
-        </IconContext.Provider>
-      </span>
+    <div className="container mx-auto relative h-1 mt-4 mb-12">
+      <input
+        autoComplete='off'
+        value={inputValue}
+        onChange={(e) => {
+          const keyword = e.target.value;
+          handleSearch(keyword);
+          keyword.length > 0 ? setIsFocus(true) : setIsFocus(false);
+          }
+        }
+        onBlur={() => setTimeout(() => {setIsFocus(false)}, 200)} //onClickのhandleSearchを先に処理させる
+        className="border border-[#0d0015] pl-8 w-30 absolute"
+        placeholder="色名で検索"
+      />
+      <IconContext.Provider value={iconContextValue}>
+        <span className="absolute">
+          <IoMdSearch />
+        </span>
+      </IconContext.Provider>
+      {isFocus && colorNameArr.length > 0 && (
+        <span className="menu left-[212px] w-40 bg-white z-50 border absolute">
+          <ul>
+            {colorNameArr.slice(0, 5).map((colorName, index) => (
+              <li 
+                key={index}
+                onClick={
+                  () => {
+                    handleSearch(colorName);
+                    setIsFocus(false);
+                  }
+                }
+              >
+                <a>{colorName}</a>
+              </li>
+            ))}
+          </ul>
+        </span>
+        )}
     </div>
   );
 }
