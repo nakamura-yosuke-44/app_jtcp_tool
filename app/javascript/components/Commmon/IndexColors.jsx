@@ -17,7 +17,6 @@ function IndexColors({ colors, favorites, login }) {
       />
     );
   });
-
   return (
     <>
       <SearchForm setIndexColors={setIndexColors} />
