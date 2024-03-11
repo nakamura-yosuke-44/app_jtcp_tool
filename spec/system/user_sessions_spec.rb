@@ -1,12 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'UserSessions', type: :system, js: true do
-  before do
-    ActionController::Base.allow_forgery_protection = true
-  end
-  after do
-    ActionController::Base.allow_forgery_protection = false
-  end
   let!(:user) { create :user }
   describe 'ログイン' do
     context 'フォームの入力値が正常' do

@@ -1,7 +1,6 @@
 module LoginSupport
   def login_by_helper(user)
     sign_in user
-
   end
 
   def login_by_fill(user)
