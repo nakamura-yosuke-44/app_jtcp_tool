@@ -48,7 +48,7 @@ function SearchForm({ setIndexColors }) {
         </span>
       </IconContext.Provider>
       {isFocus && colorNameArr.length > 0 && (
-        <span className="menu overflow-auto left-[212px] h-40 w-40 bg-white z-50 border absolute">
+        <span id='autocomplete' className="menu overflow-auto left-[212px] h-40 w-40 bg-white z-50 border absolute">
           <ul>
             {colorNameArr.map((colorName, index) => (
               <li 

@@ -20,7 +20,7 @@ function IndexColors({ colors, favorites, login }) {
   return (
     <>
       <SearchForm setIndexColors={setIndexColors} />
-      <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 bg-white">
+      <div id='color_field' className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 bg-white">
         { colorComponents }
       </div>
     </>
