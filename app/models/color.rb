@@ -27,4 +27,9 @@ class Color < ApplicationRecord
     return if keyword.blank?
     where(['name LIKE(?) OR kana LIKE(?)', "#{keyword}%", "#{keyword}%"])
   end
+
+  def self.custom_select
+    colors = select(:id, :name, :kana, :code).order(:kana)
+    colors.map{ |color| { id: color.id, name: color.name, kana: color.kana, code: color.code } }
+  end
 end
