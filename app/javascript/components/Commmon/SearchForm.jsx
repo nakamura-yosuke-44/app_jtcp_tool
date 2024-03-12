@@ -29,6 +29,7 @@ function SearchForm({ setIndexColors }) {
   return (
     <div className="container mx-auto relative h-1 mt-4 mb-12">
       <input
+        id='search_form'
         autoComplete='off'
         value={inputValue}
         onChange={(e) => {
@@ -47,9 +48,9 @@ function SearchForm({ setIndexColors }) {
         </span>
       </IconContext.Provider>
       {isFocus && colorNameArr.length > 0 && (
-        <span className="menu left-[212px] w-40 bg-white z-50 border absolute">
+        <span className="menu overflow-auto left-[212px] h-40 w-40 bg-white z-50 border absolute">
           <ul>
-            {colorNameArr.slice(0, 5).map((colorName, index) => (
+            {colorNameArr.map((colorName, index) => (
               <li 
                 key={index}
                 onClick={
