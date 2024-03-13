@@ -17,7 +17,7 @@ function FavoriteColors({ colors, favorites, login }) {
   });
 
   return (
-    <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 bg-white">
+    <div className="container mx-auto mt-8 grid grid-cols-2 gap-4 bg-white md:grid-cols-3 lg:grid-cols-4">
       { colorComponents }
     </div>
   );

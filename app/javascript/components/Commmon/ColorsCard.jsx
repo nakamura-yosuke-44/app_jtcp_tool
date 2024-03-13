@@ -7,21 +7,21 @@ function ColorsCard({
   color, index, favoriteId, login,
 }) {
   return (
-    <div className="flex border-solid border-2">
+    <div className="flex border-2 border-solid">
       <div
         id={`color_${color.id}`}
-        className="rounded-full h-20 w-20 border shrink-0"
+        className="h-20 w-20 shrink-0 rounded-full border"
         style={{ backgroundColor: color.code }}
         onClick={(e) => copyColor(e, color.code)}
       />
-      <div className="flex-grow relative flex">
+      <div className="relative flex grow">
         {login && (
-          <div id={`favorite_${index}`} className="top-0 right-0 absolute z-40">
+          <div id={`favorite_${index}`} className="absolute right-0 top-0 z-40">
             <Favorite colorId={color.id} favoriteId={favoriteId} />
           </div>
         )}
-        <div className="flex items-center flex-grow" style={{ backgroundColor: color.code }}>
-          <p className="text-sm bg-white flex-grow px-4 flex items-center justify-center">
+        <div className="flex grow items-center" style={{ backgroundColor: color.code }}>
+          <p className="flex grow items-center justify-center bg-white px-4 text-sm">
             {`${color.name}(${color.kana})`}
           </p>
         </div>

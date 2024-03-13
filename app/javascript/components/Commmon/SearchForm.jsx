@@ -27,7 +27,7 @@ function SearchForm({ setIndexColors }) {
     }
   };
   return (
-    <div className="container mx-auto relative h-1 mt-4 mb-12">
+    <div className="container relative mx-auto mb-12 mt-4 h-1">
       <input
         id="search_form"
         autoComplete="off"
@@ -38,7 +38,7 @@ function SearchForm({ setIndexColors }) {
           setIsFocus(keyword.length > 0);
         }}
         onBlur={() => setTimeout(() => { setIsFocus(false); }, 200)} // onClickのhandleSearchを先に処理させる
-        className="border border-[#0d0015] pl-8 w-30 absolute"
+        className="w-30 absolute border border-[#0d0015] pl-8"
         placeholder="色名で検索"
       />
       <IconContext.Provider value={iconContextValue}>
@@ -47,12 +47,12 @@ function SearchForm({ setIndexColors }) {
         </span>
       </IconContext.Provider>
       {isFocus && colorNameArr.length > 0 && (
-        <span id="autocomplete" className="menu overflow-auto left-[212px] h-40 w-40 bg-white z-50 border absolute">
+        <span id="autocomplete" className="menu absolute left-[212px] z-50 h-40 w-40 overflow-auto border bg-white">
           <ul>
             {colorNameArr.map((colorName) => (
               <li // eslint-disable-line jsx-a11y/no-noninteractive-element-interactions
                 key={`search_${colorName.id}`}
-                className="hover:bg-gray-200 mb-3"
+                className="mb-3 hover:bg-gray-200"
                 onClick={
                   () => {
                     handleSearch(colorName.name);
