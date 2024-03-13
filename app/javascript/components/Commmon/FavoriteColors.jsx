@@ -5,7 +5,15 @@ import ColorsCard from './ColorsCard';
 function FavoriteColors({ colors, favorites, login }) {
   const colorComponents = colors.map((color, index) => {
     const favorite = favorites.find((f) => f.color_id === color.id);
-    return <ColorsCard key={color.id} color={color} index={index} favoriteId={favorite.id} login={login} />;
+    return (
+      <ColorsCard
+        key={color.id}
+        color={color}
+        index={index}
+        favoriteId={favorite.id}
+        login={login}
+      />
+    );
   });
 
   return (
