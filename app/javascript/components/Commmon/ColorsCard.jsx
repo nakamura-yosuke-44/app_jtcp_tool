@@ -7,10 +7,10 @@ function ColorsCard({
   color, index, favoriteId, login,
 }) {
   return (
-    <div className="flex border-2 border-solid">
+    <div className="flex border-2">
       <div
         id={`color_${color.id}`}
-        className="h-20 w-20 shrink-0 rounded-full border"
+        className="h-20 w-20 rounded-full"
         style={{ backgroundColor: color.code }}
         onClick={(e) => copyColor(e, color.code)}
       />
@@ -21,9 +21,11 @@ function ColorsCard({
           </div>
         )}
         <div className="flex grow items-center" style={{ backgroundColor: color.code }}>
-          <p className="flex grow items-center justify-center bg-white px-4 text-sm">
-            {`${color.name}(${color.kana})`}
-          </p>
+          <div className="bg-white px-4 w-full text-center text-sm">
+            {color.name}
+          <br />
+            ({color.kana})
+          </div>
         </div>
       </div>
     </div>

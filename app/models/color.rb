@@ -29,7 +29,7 @@ class Color < ApplicationRecord
   end
 
   def self.custom_select
-    colors = select(:id, :name, :kana, :code).order(:kana)
+    colors = select(:id, :name, :kana, :code)
     colors.map{ |color| { id: color.id, name: color.name, kana: color.kana, code: color.code } }
   end
 end
