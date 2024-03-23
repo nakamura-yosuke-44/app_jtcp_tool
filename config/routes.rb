@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   
   get "search" => "searches#search"
+  get "get_colors" => "api#get_colors"
+  get "get_favorites" => "api#get_favorites"
 
   resources :colors do
     collection do
