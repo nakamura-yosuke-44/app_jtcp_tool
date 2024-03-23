@@ -17,9 +17,15 @@ function FavoriteColors({ colors, favorites, login }) {
   });
 
   return (
-    <div className="container mx-auto mt-8 grid grid-cols-2 gap-4 bg-white md:grid-cols-3 lg:grid-cols-4">
-      { colorComponents }
-    </div>
+    <>
+      {colors.length > 0 ? (
+         <div className="container mx-auto mt-8 grid grid-cols-2 gap-4 bg-white md:grid-cols-3 lg:grid-cols-4">
+           { colorComponents }
+         </div>
+      ) : (
+        <p>お気に入りはありません</p>
+      )}
+    </>
   );
 }
 
