@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import { IoMdSearch } from 'react-icons/io';
 import { IconContext } from 'react-icons';
 
-axios.defaults.headers['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
 function SearchForm({ setIndexColors }) {
   const [inputValue, setInputValue] = useState('');
   const [colorNameArr, setColorNameArr] = useState([]);
