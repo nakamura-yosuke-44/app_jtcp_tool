@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JtcpTool</title>
+    <title><%= content_for?(:title) ? yield(:title) : "Jtcp" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application","data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application","data-turbo-track": "reload", media: "all" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <% if current_page?(colors_path) || current_page?(favorites_colors_path) %>
       <meta name="turbo-cache-control" content="no-cache">
@@ -19,7 +19,7 @@
       <%= render 'shared/before_login_header' %>
     <% end %>
     <%= render 'shared/flash_message' %>
-    <div class="flex-grow flex flex-col bg-[#ffffff]">
+    <div id='base' class="flex grow flex-col bg-white">
       <div class="ml-4"><%= breadcrumbs separator: " &rsaquo; " %></div> 
       <%= yield %>
     </div>

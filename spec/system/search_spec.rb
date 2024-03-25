@@ -50,7 +50,7 @@ RSpec.describe 'Search', type: :system, js: true do
           page.save_screenshot
           expect(page).not_to have_content('桜色')
           expect(page).not_to have_content('空色')
-          find('a', text: '藍色').click
+          find('li', text: '藍色').click
         end
         expect(find('#search_form').value).to eq('藍色')
         within('#color_field') do
@@ -66,10 +66,9 @@ RSpec.describe 'Search', type: :system, js: true do
         fill_in 'search_form', with: '藍'
         within('#autocomplete') do
           expect(page).to have_content('藍色')
-          page.save_screenshot
           expect(page).not_to have_content('桜色')
           expect(page).not_to have_content('空色')
-          find('a', text: '藍色').click
+          find('li', text: '藍色').click
         end
         expect(find('#search_form').value).to eq('藍色')
         within('#color_field') do
