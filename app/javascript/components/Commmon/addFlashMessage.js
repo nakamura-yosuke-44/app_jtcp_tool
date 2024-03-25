@@ -3,14 +3,22 @@ const removeFlashMessage = () => {
   node.remove();
 };
 
-const addFlashMessage = (id, message) => {
-  const node = document.getElementById(id);
+const addFlashMessage = (message,type) => {
+  const node = document.getElementById('base');
   const newDiv = document.createElement('div');
   newDiv.id = 'flashMessage';
-  newDiv.className = 'bg-green-500 px-4 py-2 text-white mb-4 fixed top-16 inset-x-0 z-50';
+  let messageType;
+  switch (type) {
+    case 'success':
+      messageType = 'bg-green-500';
+    case 'alert':
+      messageType = 'bg-red-500';
+  }
+  const messeageType = type == 'success' ? 'bg-green-500' : 'bg-red-500'
+  newDiv.className = `fixed inset-x-0 top-16 z-50 mb-4 ${messeageType}  px-4 py-2 text-white`;
   newDiv.textContent = message;
-  node.appendChild(newDiv);
-  setTimeout(removeFlashMessage, 500);
+  node.prepend(newDiv);
+  setTimeout(removeFlashMessage, 400);
 };
 
 export default addFlashMessage;

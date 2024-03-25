@@ -1,10 +1,9 @@
 import addFlashMessage from './addFlashMessage';
 
-function copyColor(e, colorCode) {
+function copyColor(colorCode) {
   navigator.clipboard.writeText(colorCode)
     .then(() => {
-      const nodeId = e.target.id;
-      addFlashMessage(nodeId, 'コピーしました');
+      addFlashMessage('コピーしました');
     })
     .catch((error) => {
       console.error('エラー:', error.message || error);
