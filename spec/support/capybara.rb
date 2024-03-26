@@ -4,5 +4,5 @@ RSpec.configure do |config|
     #driven_by :selenium_chrome
   end
   
-  Capybara.asset_host = 'http://localhost:3000'
+  Capybara.asset_host = 'http://localhost:3001'
 end
