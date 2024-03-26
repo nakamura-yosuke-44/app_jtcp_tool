@@ -12,7 +12,7 @@ function ColorsCard({
         id={`color_${color.id}`}
         className="h-20 w-20 rounded-full"
         style={{ backgroundColor: color.code }}
-        onClick={(e) => copyColor(e, color.code)}
+        onClick={() => copyColor(color.code)}
       />
       <div className="relative flex grow">
         {login && (

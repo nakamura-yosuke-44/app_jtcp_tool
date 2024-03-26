@@ -5,7 +5,7 @@ import FavoriteColors from './components/Commmon/FavoriteColors';
 
 axios.defaults.headers['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-async function favoriteColors () {
+async function favoriteColors() {
   const response = await axios.get('/get_favorites')
   const data = response.data;
   const { colors, favorites, login } = data
