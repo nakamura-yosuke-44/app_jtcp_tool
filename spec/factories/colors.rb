@@ -32,4 +32,3 @@ FactoryBot.define do
     code { "#a0d8ef" }
   end
 end
-

@@ -52,4 +52,3 @@ RSpec.describe 'UserSessions', js: true do
     end
   end
 end
-
