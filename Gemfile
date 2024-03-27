@@ -52,6 +52,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem 'pry-rails', '~> 0.3.9'
   gem 'annotate', '~> 3.2'
+  gem 'rubocop', '~> 1.62', '>= 1.62.1', require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-rspec", require: false
 end
 
 group :development do
