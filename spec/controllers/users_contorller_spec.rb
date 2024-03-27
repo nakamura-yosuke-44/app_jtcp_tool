@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Devise::SessionsController, type: :controller do
+RSpec.describe Devise::SessionsController do
   context 'ログイン' do
     it 'トップ画面が表示されること' do
       login

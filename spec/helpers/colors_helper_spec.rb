@@ -10,6 +10,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe ColorsHelper, type: :helper do
+RSpec.describe ColorsHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

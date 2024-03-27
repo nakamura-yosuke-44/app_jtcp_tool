@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Favorites', type: :system do
+RSpec.describe 'Favorites' do
   before do
     ActionController::Base.allow_forgery_protection = true
   end

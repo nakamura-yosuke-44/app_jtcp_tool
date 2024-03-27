@@ -10,6 +10,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe TopHelper, type: :helper do
+RSpec.describe TopHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

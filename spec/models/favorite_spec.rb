@@ -21,6 +21,6 @@
 #
 require 'rails_helper'
 
-RSpec.describe Favorite, type: :model do
+RSpec.describe Favorite do
   #pending "add some examples to (or delete) #{__FILE__}"
 end

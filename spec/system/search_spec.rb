@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Search', type: :system, js: true do
+RSpec.describe 'Search', js: true do
   let!(:user) { create :user }
   let!(:color_ai) { create :color_ai }
   let!(:color_sakura) { create :color_sakura }

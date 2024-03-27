@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'UserRegistration', type: :system, js: true do
+RSpec.describe 'UserRegistration', js: true do
   before do
     visit new_user_registration_path
   end

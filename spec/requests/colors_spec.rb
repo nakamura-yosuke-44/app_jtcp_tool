@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Colors", type: :request do
+RSpec.describe "Colors" do
   describe "GET /index" do
     it "returns http success" do
       get "/colors/index"
