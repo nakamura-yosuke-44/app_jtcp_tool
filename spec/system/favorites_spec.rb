@@ -7,11 +7,11 @@ RSpec.describe 'Favorites' do
   after do
     ActionController::Base.allow_forgery_protection = false
   end
-  let!(:favorite) { create :favorite }
+  let!(:favorite) { create(:favorite) }
   let!(:user) { favorite.user }
   let!(:color_ai) { favorite.color }
-  let!(:color_sakura) { create :color_sakura }
-  let!(:color_sora) { create :color_sora }
+  let!(:color_sakura) { create(:color_sakura) }
+  let!(:color_sora) { create(:color_sora) }
   describe 'お気に入り機能' do
     context 'ログイン前'do
       it 'お気に入りアイコンが表示されない' do
@@ -19,7 +19,7 @@ RSpec.describe 'Favorites' do
         expect(page).to have_no_selector("#favorite_#{rand(400)}")
       end
     end
-    
+
     context 'ログイン後' do
       before do
         user.confirm
@@ -30,7 +30,7 @@ RSpec.describe 'Favorites' do
         visit colors_path
         expect(page).to have_selector("#favorite_#{rand(3)}")
       end
-      
+
       it 'アイコンを押すとお気に入りに追加される' do
         within('#favorite_1') do
           expect(page).to have_css("path[fill='#FFCDD2']")

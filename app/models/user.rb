@@ -30,7 +30,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :timeoutable, :confirmable
-  
+
   def add_favorite(color)
     favorite_colors << color
   end

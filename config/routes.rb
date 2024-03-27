@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  
+
   get "search" => "searches#search"
   get "get_colors" => "api#get_colors"
   get "get_favorites" => "api#get_favorites"

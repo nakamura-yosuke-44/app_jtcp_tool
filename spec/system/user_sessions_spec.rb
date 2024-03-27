@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'UserSessions', js: true do
-  let!(:user) { create :user }
+  let!(:user) { create(:user) }
   describe 'ログイン' do
     context 'フォームの入力値が正常' do
       it 'ログイン処理が成功' do

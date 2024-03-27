@@ -45,7 +45,7 @@ RSpec.describe 'UserRegistration', js: true do
         expect(current_path).to eq(new_user_registration_path)
       end
     end
-    
+
     context 'パスワードが未入力で登録ボタンを押す' do
       it 'ユーザー登録が失敗' do
         fill_in '名前', with: 'user1'
