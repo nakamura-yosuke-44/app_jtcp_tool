@@ -63,5 +63,5 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.action_view.preload_links_header = false
+  config.action_mailer.default_url_options = { host: Settings.host }
 end
-

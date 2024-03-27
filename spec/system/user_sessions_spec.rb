@@ -4,7 +4,8 @@ RSpec.describe 'UserSessions', type: :system, js: true do
   let!(:user) { create :user }
   describe 'ログイン' do
     context 'フォームの入力値が正常' do
-      it 'ログイン処理が成功' do      
+      it 'ログイン処理が成功' do
+        user.confirm
         login_by_fill(user)
         expect(page).to have_current_path(root_path), 'トップページが表示されていません'
         expect(page).to have_content('ログインしました'), 'フラッシュメッセージが表示されていません'
@@ -34,6 +35,7 @@ RSpec.describe 'UserSessions', type: :system, js: true do
 
   describe 'ログアウト' do
     it 'ログアウト処理が成功' do
+      user.confirm
       login_by_fill(user)
       expect(page).to have_content('ログインしました。')
       expect(page).to have_css('#menu-icon svg')

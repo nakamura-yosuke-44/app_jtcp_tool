@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Favorites', type: :system, js: true do
+RSpec.describe 'Favorites', type: :system do
   before do
     ActionController::Base.allow_forgery_protection = true
   end
@@ -22,6 +22,7 @@ RSpec.describe 'Favorites', type: :system, js: true do
     
     context 'ログイン後' do
       before do
+        user.confirm
         login_by_helper(user)
         visit colors_path
       end
